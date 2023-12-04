@@ -1,0 +1,95 @@
+/* Curtis Simpson 12/12/2022 */
+
+@import url("https://fonts.googleapis.com/css2?family=Kanit:wght@400;700&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Kanit", system-ui, sans-serif;
+  background-color: rgb(202, 221, 255);
+  background-image: linear-gradient(90deg, rgb(238, 210, 255) 0%, rgb(190, 228, 255) 100%);
+  margin: 0;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+button {
+  cursor: pointer;
+  display: inline-block;
+  font: inherit;
+  padding: 1em 2em;
+  border: 0;
+  border-radius: 0.25rem;
+}
+button:hover {
+  filter: brightness(95%);
+}
+
+h2 {
+  font-weight: normal;
+}
+
+.centered {
+  text-align: center;
+}
+
+.container {
+  width: min(50rem, 100% - 2rem);
+  margin-inline: auto;
+}
+
+.score {
+  padding: 0.5em 1em;
+  background: hsl(0 100% 100% / 0.8);
+  border-radius: 0.25rem;
+  color: black;
+}
+
+.answer-container {
+  display: grid;
+  gap: 1rem;
+  margin-block: calc(1rem + 3vw);
+}
+
+.answer-button {
+  box-shadow: 0 4px hsl(0, 0%, 75%);
+}
+
+.canvas {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: -1;
+}
+
+@media only screen and (min-width: 40em) {
+  body {
+    font-size: 1.125rem;
+  }
+
+  .answer-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem 1rem;
+  }
+}
+
+@media only screen and (min-width: 65em) {
+  body {
+    font-size: 1.25rem;
+  }
+
+  .answer-button {
+    min-height: 5em;
+  }
+}
